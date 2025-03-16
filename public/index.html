@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord Clone</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <div class="sidebar">
+      <div class="servers">
+        <div class="server active" data-server="general">G</div>
+        <div class="server" data-server="gaming">🎮</div>
+        <div class="server" data-server="music">🎵</div>
+        <div class="add-server">+</div>
+      </div>
+      <div class="channels">
+        <h3>Text Channels</h3>
+        <ul id="text-channels">
+          <li class="channel active" data-channel="general">general</li>
+          <li class="channel" data-channel="random">random</li>
+        </ul>
+        <h3>Voice Channels</h3>
+        <ul id="voice-channels">
+          <li class="voice-channel" data-channel="general-voice">General Voice</li>
+          <li class="voice-channel" data-channel="gaming-voice">Gaming Voice</li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="channel-header">
+        <h2 id="current-channel">#general</h2>
+      </div>
+      <div class="messages-container" id="messages"></div>
+      <div class="message-input">
+        <input type="text" id="message-input" placeholder="Message #general">
+        <button id="send-button">Send</button>
+      </div>
+    </div>
+    <div class="users-panel">
+      <h3>Online Users</h3>
+      <ul id="online-users"></ul>
+      <div class="voice-controls hidden" id="voice-controls">
+        <h3>Voice Connected</h3>
+        <div class="voice-buttons">
+          <button id="mute-button">Mute</button>
+          <button id="disconnect-voice">Disconnect</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Auth Modal -->
+  <div id="auth-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login">Login</button>
+        <button class="auth-tab" data-tab="register">Register</button>
+      </div>
+      <div id="login-form" class="auth-form">
+        <input type="email" id="login-email" placeholder="Email">
+        <input type="password" id="login-password" placeholder="Password">
+        <button id="login-button">Login</button>
+      </div>
+      <div id="register-form" class="auth-form hidden">
+        <input type="text" id="register-username" placeholder="Username">
+        <input type="email" id="register-email" placeholder="Email">
+        <input type="password" id="register-password" placeholder="Password">
+        <button id="register-button">Register</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
